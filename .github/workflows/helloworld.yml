@@ -1,0 +1,10 @@
+name: hello-world-test
+on: push
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm i -g bats
+      - run: echo "hello world"
+      - run: bats -v
