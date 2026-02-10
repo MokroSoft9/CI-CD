@@ -8,7 +8,7 @@ on: [push, pull_request]
 #   pull_msg: "C'est une pull request !"
 
 env:
-  message: ${{ github.event_name == 'push' && 'C''est un push !' || 'C''est une pull request !' }}
+  message: ${{ github.event_name == 'push' && "C'est un push !" || "C'est une pull request !" }}
 
 
 jobs:
