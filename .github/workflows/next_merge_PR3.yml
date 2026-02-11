@@ -1,0 +1,12 @@
+name: When Merge PR is closed
+
+on: 
+  workflow_run:
+    workflows: [Merge PR]
+    types: [completed]
+
+jobs:
+  next_mergePR:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "Le workflow précédent est terminé"
