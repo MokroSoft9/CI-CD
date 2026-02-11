@@ -1,0 +1,14 @@
+name: Merge PR 
+
+on: 
+  pull_request:
+    types: [closed]
+
+#workflow qui se lance quand PR ferméé
+jobs: 
+  pr_merged:
+    runs-on: ubuntu-latest 
+    if: ${{github.event.pull_request.merged == true}}
+    steps:
+#affiche le message seulement si la PR est mergée
+    - run: echo "La PR est merged"
