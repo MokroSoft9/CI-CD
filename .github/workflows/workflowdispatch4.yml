@@ -1,0 +1,16 @@
+name: workflow dispatch
+
+on: 
+  workflow_dispatch:
+    
+jobs:
+  job1: 
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "Le premier jobs est lancé manuellement"
+
+  job2:
+    needs: [job1]
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "Le deuxième jobs s'est lancé apres le premier"
